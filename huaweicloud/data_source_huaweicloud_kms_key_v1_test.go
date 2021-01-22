@@ -78,12 +78,12 @@ data "huaweicloud_kms_key" "key_2" {
 
 var testAccKmsKeyV1DataSource_epsId = fmt.Sprintf(`
 resource "huaweicloud_kms_key_v1" "key1" {
-	key_alias       = "%s"
-	key_description = "test description"
-	pending_days    = "7"
-	is_enabled      = true
-	enterprise_project_id = "%s"
-  }
+  key_alias       = "%s"
+  key_description = "test description"
+  pending_days    = "7"
+  is_enabled      = true
+  enterprise_project_id = "%s"
+}
 
 data "huaweicloud_kms_key_v1" "key1" {
   key_alias       = "${huaweicloud_kms_key_v1.key1.key_alias}"
